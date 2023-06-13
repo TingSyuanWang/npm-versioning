@@ -37,12 +37,12 @@ jobs:
 #      - name: 📥 Install dependencies and build
 #        run: npm ci & npm run build
       - name: 🚀 Publish to NPM on prerelease
-        if: github.event_name == 'prereleased'
+        if: ${{ github.event.release.prerelease == true }}
         run: npm publish --tag pre
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: 🚀 Publish to NPM on release
-        if: github.event_name == 'released'
+        if: ${{ github.event.release.prerelease == false }}
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
