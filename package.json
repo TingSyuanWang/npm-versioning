@@ -1,6 +1,6 @@
 {
   "name": "@twang43/npm-versioning",
-  "version": "3.0.0-pre.0",
+  "version": "3.0.0-pre.1",
   "description": "NPM Package Publish Test\n\n",
   "main": "index.js",
   "scripts": {
